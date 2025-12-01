@@ -1,177 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Funciones en JavaScript</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio Responsive</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      transition: background-color 0.4s ease;
+    }
+
+    @media (min-width: 992px) {
+      body { background-color: #dbeafe; }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      body { background-color: #fde2e4; } 
+    }
+
+    @media (max-width: 767px) {
+      body { background-color: #d1fae5; } 
+    }
+
+    .pa {
+      color: gray;
+    }
+
+    .card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 1rem;
+    }
+
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 10px 0;
+    }
+
+    .navbar { background-color: #212529 !important; }
+
+    @media (max-width: 767px) {
+      #carouselExample {
+        display: none;
+      }
+    }
+
+    .carousel-item > div {
+      height: 250px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      .carousel-item > div { background-color: #9ca3af; } 
+    }
+    @media (min-width: 992px) {
+      .carousel-item > div { background-color: #6b7280; } 
+    }
+
+  </style>
 </head>
+
 <body>
-<p>Completar con la implementación de las funciones correspondientes</p>
-<script type="text/javascript">
-// ===============================
-// FUNCIONES NUMÉRICAS
-// ===============================
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand" href="#"><i class="bi bi-person-circle fs-3"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Artículos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-// 1- Función tradicional
-function suma(num1, num2) {
-    return num1 + num2;
-}
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-block w-100"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-block w-100"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-block w-100"></div>
+      </div>
+    </div>
 
-console.log("Resultados de suma():")
-console.log(suma(2,3)); // 5
-console.log(suma(4,4)); // 8
-console.log(suma(-10,10)); // 0
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
 
+  <section class="content text-center">
+    <h1>Artículo</h1>
+    <h3 class="pa">Subtítulo</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus vel mattis nisi.</p>
+    <p>Etiam cursus quam a nisl hendrerit, non congue elit tincidunt. Cras in justo sed odio gravida finibus.</p>
+  </section>
 
-// 2- Expresión de función
-const elevarAlCubo = function(num) {
-    return num ** 3;
-}
+  <div class="container text-center mb-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-sm mx-auto" style="width: 18rem;">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">Texto de ejemplo 1.</p>
+            <a href="#" class="btn btn-primary w-100">Ir</a>
+          </div>
+        </div>
+      </div>
 
-console.log("Resultados de elevarAlCubo():")
-console.log(elevarAlCubo(3)); // 27
-console.log(elevarAlCubo(99)); // 970299
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-sm mx-auto" style="width: 18rem;">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card 2</h5>
+            <p class="card-text">Texto de ejemplo 2.</p>
+            <a href="#" class="btn btn-primary w-100">Ir</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-sm mx-auto" style="width: 18rem;">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Texto de ejemplo 3.</p>
+            <a href="#" class="btn btn-primary w-100">Ir</a>
+          </div>
+        </div>
+      </div>
 
-// 3- Función flecha
-const restoDivisionEntera = (dividendo, divisor) => dividendo % divisor;
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-sm mx-auto" style="width: 18rem;">
+          <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card 4</h5>
+            <p class="card-text">Texto de ejemplo 4.</p>
+            <a href="#" class="btn btn-primary w-100">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-console.log("Resultados de restoDivisionEntera():")
-console.log(restoDivisionEntera(1,3)); // 1
-console.log(restoDivisionEntera(2,3)); // 2
-console.log(restoDivisionEntera(3,3)); // 0
-console.log(restoDivisionEntera(4,3)); // 1
+  <div class="container mb-5">
+    <h4 class="text-center mb-3">FAQ</h4>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            Pregunta 1
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show">
+          <div class="accordion-body">Respuesta de la pregunta 1.</div>
+        </div>
+      </div>
 
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            Pregunta 2
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse">
+          <div class="accordion-body">Respuesta de la pregunta 2.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-// 4
-function numeroPi() {
-    return Math.PI;
-}
+  <div class="container mb-5">
+    <h4 class="text-center mb-3">Contacto</h4>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="Tu nombre">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="tu@email.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-control" rows="3" placeholder="Escribe tu mensaje"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="reset" class="btn btn-secondary">Resetear</button>
+    </form>
+  </div>
 
-console.log("Resultado de numeroPi():")
-console.log(numeroPi())
+  <footer class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col text-start"><small>Plataformas móviles</small></div>
+        <div class="col text-end"><small>Alumno</small></div>
+      </div>
+    </div>
+  </footer>
 
-
-// 5
-const numeroRandom = () => Math.random();
-
-console.log("Resultados de numeroRandom():")
-console.log(numeroRandom())
-console.log(numeroRandom())
-console.log(numeroRandom())
-
-
-// 6
-const numeroRandomDesdeHasta = function(desde, hasta) {
-    return Math.floor(Math.random() * (hasta - desde + 1)) + desde;
-}
-
-console.log("Resultados de numeroRandomDesdeHasta():")
-console.log(numeroRandomDesdeHasta(1,6))
-console.log(numeroRandomDesdeHasta(2,5))
-console.log(numeroRandomDesdeHasta(3,4))
-
-
-// 7
-function esPar(num) {
-    return num % 2 === 0;
-}
-
-console.log("Resultados de esPar():")
-console.log(esPar(4)); // true
-console.log(esPar(5)); // false
-console.log(esPar(0)); // true
-console.log(esPar(-2)); // true
-
-
-// 8
-const esPositivo = (num) => num > 0;
-
-console.log("Resultados de esPositivo():")
-console.log(esPositivo(4)); // true
-console.log(esPositivo(-3)); // false
-console.log(esPositivo(0)); // false
-
-
-// 9
-function clasificarNumero(num) {
-    let paridad = esPar(num) ? "par" : "impar";
-    let signo = num > 0 ? "positivo" : (num < 0 ? "negativo" : "no positivo");
-    return `El número ${num} es ${paridad} y ${signo}.`;
-}
-
-console.log("Resultados de clasificarNumero():")
-console.log(clasificarNumero(4)); 
-console.log(clasificarNumero(-3)); 
-console.log(clasificarNumero(0)); 
-
-
-// ===============================
-// FUNCIONES DE CADENAS
-// ===============================
-
-// 10
-function transformarMayuscula(cadena) {
-    return cadena.toUpperCase();
-}
-
-console.log("Resultados de transformarMayuscula():")
-console.log(transformarMayuscula("Plataformas Móviles"))
-console.log(transformarMayuscula("hola mundo"))
-console.log(transformarMayuscula("abc"))
-
-
-// 11
-const primeraLetra = function(cadena) {
-    return cadena.charAt(0);
-}
-
-console.log("Resultados de primeraLetra():")
-console.log(primeraLetra("Plataformas Móviles"))
-console.log(primeraLetra("hola mundo"))
-console.log(primeraLetra("abc"))
-
-
-// 12
-const sinPrimeraLetra = (cadena) => cadena.slice(1);
-
-console.log("Resultados de sinPrimeraLetra():")
-console.log(sinPrimeraLetra("Plataformas Móviles"))
-console.log(sinPrimeraLetra("hola mundo"))
-console.log(sinPrimeraLetra("abc"))
-
-
-// 13
-function primeraLetraMayuscula(cadena) {
-    return cadena.charAt(0).toUpperCase() + cadena.slice(1);
-}
-
-console.log("Resultados de primeraLetraMayuscula():")
-console.log(primeraLetraMayuscula("plataformas móviles"))
-console.log(primeraLetraMayuscula("hola mundo"))
-console.log(primeraLetraMayuscula("abc"))
-
-
-// 14
-const terminaCon = (palabra, terminacion) => palabra.endsWith(terminacion);
-
-console.log("Resultados de terminaCon():")
-console.log(terminaCon("hola", "a")); 
-console.log(terminaCon("hola", "o")); 
-console.log(terminaCon("plataformas", "mas")); 
-console.log(terminaCon("plataformas", "más")); 
-
-
-// 15
-const palabraInvertida = function(palabra) {
-    return palabra.split("").reverse().join("");
-}
-
-console.log("Resultados de palabraInvertida():")
-console.log(palabraInvertida("plataformas móviles"))
-console.log(palabraInvertida("hola mundo"))
-console.log(palabraInvertida("abc"))
-
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
